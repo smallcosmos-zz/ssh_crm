@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itheima.domain">
+    <class name="Customer" table="cst_customer">
+<!--        `cust_id` BIGINT(32) NOT NULL AUTO_INCREMENT COMMENT '客户编号(主键)',-->
+<!--        `cust_name` VARCHAR(32) NOT NULL COMMENT '客户名称(公司名称)',-->
+<!--        `cust_source` VARCHAR(32) DEFAULT NULL COMMENT '客户信息来源',-->
+<!--        `cust_industry` VARCHAR(32) DEFAULT NULL COMMENT '客户所属行业',-->
+<!--        `cust_level` VARCHAR(32) DEFAULT NULL COMMENT '客户级别',-->
+<!--        `cust_linkman` VARCHAR(64) DEFAULT NULL COMMENT '联系人',-->
+<!--        `cust_phone` VARCHAR(64) DEFAULT NULL COMMENT '固定电话',-->
+<!--        `cust_mobile` VARCHAR(16) DEFAULT NULL COMMENT '移动电话',-->
+
+        <id name="cust_id" column="cust_id">
+            <generator class="native"></generator>
+        </id>
+        <property name="cust_name" column="cust_name"></property>
+        <property name="cust_source" column="cust_source"></property>
+        <property name="cust_industry" column="cust_industry"></property>
+        <property name="cust_level" column="cust_level"></property>
+        <property name="cust_linkman" column="cust_linkman"></property>
+        <property name="cust_phone" column="cust_phone"></property>
+        <property name="cust_mobile" column="cust_mobile"></property>
+
+<!--        级联操作 cascade:-->
+<!--                save-update-->
+<!--                delete-->
+<!--                all-->
+
+<!--            目的：简化操作，少写几行代码-->
+
+
+        <!--inverse属性 配置关系是否维护
+            true：Customer不维护关系
+            false：Customer维护关系
+            性能优化，提高关系维护的性能
+            一对多关系中，多的一方不能放弃维护
+        -->
+        <set name="linkMan" inverse="true">
+            <key column="lkm_cust_id"></key>
+            <one-to-many class="LinkMan"></one-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
