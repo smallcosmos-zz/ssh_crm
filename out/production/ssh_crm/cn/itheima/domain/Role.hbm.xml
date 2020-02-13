@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.itheima.domain">
+    <class name="Role" table="sys_role">
+<!--        `cust_id` BIGINT(32) NOT NULL AUTO_INCREMENT COMMENT '客户编号(主键)',-->
+<!--        `cust_name` VARCHAR(32) NOT NULL COMMENT '客户名称(公司名称)',-->
+<!--        `cust_source` VARCHAR(32) DEFAULT NULL COMMENT '客户信息来源',-->
+<!--        `cust_industry` VARCHAR(32) DEFAULT NULL COMMENT '客户所属行业',-->
+<!--        `cust_level` VARCHAR(32) DEFAULT NULL COMMENT '客户级别',-->
+<!--        `cust_linkman` VARCHAR(64) DEFAULT NULL COMMENT '联系人',-->
+<!--        `cust_phone` VARCHAR(64) DEFAULT NULL COMMENT '固定电话',-->
+<!--        `cust_mobile` VARCHAR(16) DEFAULT NULL COMMENT '移动电话',-->
+
+        <id name="role_id" >
+            <generator class="native"></generator>
+        </id>
+        <property name="role_name"></property>
+        <property name="role_memo"></property>
+
+
+
+        <set name="users" table="sys_user_role" inverse="true">
+            <key column="role_id"></key>
+            <many-to-many class="User" column="user_id"></many-to-many>
+        </set>
+
+    </class>
+</hibernate-mapping>
