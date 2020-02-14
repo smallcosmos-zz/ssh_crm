@@ -6,65 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de138cb5-87e5-44c1-a775-43d09d8ea848" name="Default Changelist" comment="首次提交">
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/cn/itheima/action/BaseDictAction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/cn/itheima/dao/BaseDictDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/cn/itheima/dao/LinkManDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/cn/itheima/dao/impl/BaseDictDaoImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/cn/itheima/dao/impl/LinkManDaoImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/cn/itheima/domain/BaseDict.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/cn/itheima/domain/BaseDict.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/cn/itheima/service/BaseDictService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/cn/itheima/service/Impl/BaseDictServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/lib/commons-beanutils-1.8.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/lib/commons-collections-3.2.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/lib/commons-lang-2.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/lib/ezmorph-1.0.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/lib/json-lib-2.4-jdk15.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/js/my.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ssh_crm/cn/itheima/action/BaseDictAction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ssh_crm/cn/itheima/dao/BaseDictDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ssh_crm/cn/itheima/dao/LinkManDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ssh_crm/cn/itheima/dao/impl/BaseDictDaoImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ssh_crm/cn/itheima/dao/impl/LinkManDaoImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ssh_crm/cn/itheima/domain/BaseDict.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ssh_crm/cn/itheima/domain/BaseDict.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ssh_crm/cn/itheima/service/BaseDictService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ssh_crm/cn/itheima/service/Impl/BaseDictServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/itheima/action/BaseDictAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/itheima/dao/BaseDictDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/itheima/dao/impl/BaseDictDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/itheima/domain/BaseDict.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/itheima/domain/BaseDict.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/itheima/service/BaseDictService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/itheima/service/Impl/BaseDictServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/commons-beanutils-1.8.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/commons-collections-3.2.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/commons-lang-2.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/ezmorph-1.0.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/json-lib-2.4-jdk15.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/js/my.js" afterDir="false" />
+    <list default="true" id="de138cb5-87e5-44c1-a775-43d09d8ea848" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/DB.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/DB.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/cn/itheima/domain/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/cn/itheima/domain/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/cn/itheima/domain/Customer.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/cn/itheima/domain/Customer.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/cn/itheima/domain/LinkMan.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/cn/itheima/domain/LinkMan.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/WEB-INF/classes/struts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/jsp/customer/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ssh_crm_war_exploded/jsp/customer/add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ssh_crm/DB.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ssh_crm/DB.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ssh_crm/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ssh_crm/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ssh_crm/cn/itheima/domain/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ssh_crm/cn/itheima/domain/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ssh_crm/cn/itheima/domain/Customer.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ssh_crm/cn/itheima/domain/Customer.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ssh_crm/cn/itheima/domain/LinkMan.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ssh_crm/cn/itheima/domain/LinkMan.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ssh_crm/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ssh_crm/struts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DB.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/itheima/domain/Customer.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/itheima/domain/Customer.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/itheima/domain/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/itheima/domain/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/itheima/domain/LinkMan.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/itheima/domain/LinkMan.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/struts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/jsp/customer/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/customer/add.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +56,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring_day03tx" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -247,7 +190,7 @@
       <workItem from="1581417004952" duration="2334000" />
       <workItem from="1581557751687" duration="19777000" />
       <workItem from="1581647005451" duration="8983000" />
-      <workItem from="1581659431461" duration="8724000" />
+      <workItem from="1581659431461" duration="11000000" />
     </task>
     <task id="LOCAL-00001" summary="首次提交">
       <created>1581597439842</created>
@@ -263,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581597778056</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="2.14">
+      <created>1581675361180</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1581675361180</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +232,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="首次提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="首次提交" />
+    <MESSAGE value="2.14" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.14" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="157" key="#Notifications" timestamp="1581598874010">
@@ -305,14 +256,14 @@
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
     <state x="662" y="374" width="595" height="277" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1013@0.0.1920.1013" timestamp="1581660625040" />
-    <state x="400" y="72" key="CommitChangelistDialog2" timestamp="1581647471260">
+    <state x="400" y="72" key="CommitChangelistDialog2" timestamp="1581676320334">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state x="400" y="72" key="CommitChangelistDialog2/0.0.1920.1013@0.0.1920.1013" timestamp="1581647471260" />
-    <state x="687" y="237" key="FileChooserDialogImpl" timestamp="1581672586038">
+    <state x="400" y="72" key="CommitChangelistDialog2/0.0.1920.1013@0.0.1920.1013" timestamp="1581676320334" />
+    <state x="687" y="237" key="FileChooserDialogImpl" timestamp="1581676354749">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state x="687" y="237" key="FileChooserDialogImpl/0.0.1920.1013@0.0.1920.1013" timestamp="1581672586038" />
+    <state x="687" y="237" key="FileChooserDialogImpl/0.0.1920.1013@0.0.1920.1013" timestamp="1581676354749" />
     <state x="797" y="382" width="580" height="248" key="Github.ShareDialog" timestamp="1581596713925">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
@@ -337,70 +288,70 @@
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
     <state width="1373" height="2" key="GridCell.Tab.-1.right/0.0.1920.1013@0.0.1920.1013" timestamp="1581656607862" />
-    <state width="1373" height="463" key="GridCell.Tab.0.bottom" timestamp="1581672936208">
+    <state width="1373" height="293" key="GridCell.Tab.0.bottom" timestamp="1581676268287">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.0.bottom/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936208" />
-    <state width="1373" height="463" key="GridCell.Tab.0.center" timestamp="1581672936207">
+    <state width="1373" height="293" key="GridCell.Tab.0.bottom/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268287" />
+    <state width="1373" height="293" key="GridCell.Tab.0.center" timestamp="1581676268286">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.0.center/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936207" />
-    <state width="1373" height="463" key="GridCell.Tab.0.left" timestamp="1581672936207">
+    <state width="1373" height="293" key="GridCell.Tab.0.center/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268286" />
+    <state width="1373" height="293" key="GridCell.Tab.0.left" timestamp="1581676268286">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.0.left/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936207" />
-    <state width="1373" height="463" key="GridCell.Tab.0.right" timestamp="1581672936208">
+    <state width="1373" height="293" key="GridCell.Tab.0.left/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268286" />
+    <state width="1373" height="293" key="GridCell.Tab.0.right" timestamp="1581676268287">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.0.right/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936208" />
-    <state width="1373" height="463" key="GridCell.Tab.1.bottom" timestamp="1581672936208">
+    <state width="1373" height="293" key="GridCell.Tab.0.right/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268287" />
+    <state width="1373" height="293" key="GridCell.Tab.1.bottom" timestamp="1581676268287">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.1.bottom/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936208" />
-    <state width="1373" height="463" key="GridCell.Tab.1.center" timestamp="1581672936208">
+    <state width="1373" height="293" key="GridCell.Tab.1.bottom/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268287" />
+    <state width="1373" height="293" key="GridCell.Tab.1.center" timestamp="1581676268287">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.1.center/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936208" />
-    <state width="1373" height="463" key="GridCell.Tab.1.left" timestamp="1581672936208">
+    <state width="1373" height="293" key="GridCell.Tab.1.center/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268287" />
+    <state width="1373" height="293" key="GridCell.Tab.1.left" timestamp="1581676268287">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.1.left/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936208" />
-    <state width="1373" height="463" key="GridCell.Tab.1.right" timestamp="1581672936208">
+    <state width="1373" height="293" key="GridCell.Tab.1.left/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268287" />
+    <state width="1373" height="293" key="GridCell.Tab.1.right" timestamp="1581676268287">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.1.right/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936208" />
-    <state width="1373" height="463" key="GridCell.Tab.2.bottom" timestamp="1581672936209">
+    <state width="1373" height="293" key="GridCell.Tab.1.right/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268287" />
+    <state width="1373" height="293" key="GridCell.Tab.2.bottom" timestamp="1581676268288">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.2.bottom/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936209" />
-    <state width="1373" height="463" key="GridCell.Tab.2.center" timestamp="1581672936208">
+    <state width="1373" height="293" key="GridCell.Tab.2.bottom/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268288" />
+    <state width="1373" height="293" key="GridCell.Tab.2.center" timestamp="1581676268288">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.2.center/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936208" />
-    <state width="1373" height="463" key="GridCell.Tab.2.left" timestamp="1581672936208">
+    <state width="1373" height="293" key="GridCell.Tab.2.center/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268288" />
+    <state width="1373" height="293" key="GridCell.Tab.2.left" timestamp="1581676268288">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.2.left/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936208" />
-    <state width="1373" height="463" key="GridCell.Tab.2.right" timestamp="1581672936208">
+    <state width="1373" height="293" key="GridCell.Tab.2.left/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268288" />
+    <state width="1373" height="293" key="GridCell.Tab.2.right" timestamp="1581676268288">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.2.right/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936208" />
-    <state width="1373" height="463" key="GridCell.Tab.3.bottom" timestamp="1581672936209">
+    <state width="1373" height="293" key="GridCell.Tab.2.right/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268288" />
+    <state width="1373" height="293" key="GridCell.Tab.3.bottom" timestamp="1581676268288">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.3.bottom/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936209" />
-    <state width="1373" height="463" key="GridCell.Tab.3.center" timestamp="1581672936209">
+    <state width="1373" height="293" key="GridCell.Tab.3.bottom/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268288" />
+    <state width="1373" height="293" key="GridCell.Tab.3.center" timestamp="1581676268288">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.3.center/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936209" />
-    <state width="1373" height="463" key="GridCell.Tab.3.left" timestamp="1581672936209">
+    <state width="1373" height="293" key="GridCell.Tab.3.center/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268288" />
+    <state width="1373" height="293" key="GridCell.Tab.3.left" timestamp="1581676268288">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.3.left/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936209" />
-    <state width="1373" height="463" key="GridCell.Tab.3.right" timestamp="1581672936209">
+    <state width="1373" height="293" key="GridCell.Tab.3.left/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268288" />
+    <state width="1373" height="293" key="GridCell.Tab.3.right" timestamp="1581676268288">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state width="1373" height="463" key="GridCell.Tab.3.right/0.0.1920.1013@0.0.1920.1013" timestamp="1581672936209" />
+    <state width="1373" height="293" key="GridCell.Tab.3.right/0.0.1920.1013@0.0.1920.1013" timestamp="1581676268288" />
     <state width="1373" height="629" key="GridCell.Tab.6.bottom" timestamp="1581655372495">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
@@ -421,14 +372,18 @@
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
     <state x="483" y="130" width="1190" height="752" key="SettingsEditor/0.0.1920.1013@0.0.1920.1013" timestamp="1581596653925" />
-    <state x="559" y="230" key="Vcs.Push.Dialog.v2" timestamp="1581598421517">
+    <state x="559" y="230" key="Vcs.Push.Dialog.v2" timestamp="1581677124029">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
-    <state x="559" y="230" key="Vcs.Push.Dialog.v2/0.0.1920.1013@0.0.1920.1013" timestamp="1581598421517" />
+    <state x="559" y="230" key="Vcs.Push.Dialog.v2/0.0.1920.1013@0.0.1920.1013" timestamp="1581677124029" />
     <state x="564" y="334" key="com.intellij.ide.util.TipDialog" timestamp="1581659460800">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
     <state x="564" y="334" key="com.intellij.ide.util.TipDialog/0.0.1920.1013@0.0.1920.1013" timestamp="1581659460800" />
+    <state x="543" y="279" key="git4idea.merge.GitPullDialog" timestamp="1581677629215">
+      <screen x="0" y="0" width="1920" height="1013" />
+    </state>
+    <state x="543" y="279" key="git4idea.merge.GitPullDialog/0.0.1920.1013@0.0.1920.1013" timestamp="1581677629215" />
     <state x="627" y="175" key="spring file set editor" timestamp="1581398367250">
       <screen x="0" y="0" width="1920" height="1013" />
     </state>
