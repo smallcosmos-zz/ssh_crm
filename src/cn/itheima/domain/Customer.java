@@ -21,12 +21,41 @@ public class Customer {
     private Long cust_id;
 
     private String cust_name;
-    private String cust_source;
-    private String cust_industry;
-    private String cust_level;
+    //private String cust_source;
+    //private String cust_industry;
+    //private String cust_level;
     private String cust_linkman;
     private String cust_phone;
     private String cust_mobile;
+
+    //关联数据字典
+    private BaseDict cust_source;//客户来源
+    private BaseDict cust_industry;//客户行业
+    private BaseDict cust_level;//客户级别
+
+    public BaseDict getCust_source() {
+        return cust_source;
+    }
+
+    public void setCust_source(BaseDict cust_source) {
+        this.cust_source = cust_source;
+    }
+
+    public BaseDict getCust_industry() {
+        return cust_industry;
+    }
+
+    public void setCust_industry(BaseDict cust_industry) {
+        this.cust_industry = cust_industry;
+    }
+
+    public BaseDict getCust_level() {
+        return cust_level;
+    }
+
+    public void setCust_level(BaseDict cust_level) {
+        this.cust_level = cust_level;
+    }
 
     private Set<LinkMan> linkMan = new HashSet<>();
 
@@ -46,29 +75,6 @@ public class Customer {
         this.cust_name = cust_name;
     }
 
-    public String getCust_source() {
-        return cust_source;
-    }
-
-    public void setCust_source(String cust_source) {
-        this.cust_source = cust_source;
-    }
-
-    public String getCust_industry() {
-        return cust_industry;
-    }
-
-    public void setCust_industry(String cust_industry) {
-        this.cust_industry = cust_industry;
-    }
-
-    public String getCust_level() {
-        return cust_level;
-    }
-
-    public void setCust_level(String cust_level) {
-        this.cust_level = cust_level;
-    }
 
     public String getCust_linkman() {
         return cust_linkman;

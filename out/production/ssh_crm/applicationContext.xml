@@ -67,6 +67,9 @@
     <bean name="customerAction" class="cn.itheima.action.CustomerAction" scope="prototype">
         <property name="cs" ref="customerService"></property>
     </bean>
+    <bean name="baseDictAction" class="cn.itheima.action.BaseDictAction" scope="prototype">
+        <property name="bs" ref="baseDictService"></property>
+    </bean>
     <!--    service-->
     <bean name="userService" class="cn.itheima.service.Impl.UserServiceImpl">
         <property name="userDao" ref="userDao"></property>
@@ -74,11 +77,17 @@
     <bean name="customerService" class="cn.itheima.service.Impl.CustomerServiceImpl">
         <property name="cd" ref="customerDao"></property>
     </bean>
+    <bean name="baseDictService" class="cn.itheima.service.Impl.BaseDictServiceImpl">
+        <property name="bsd" ref="baseDictDao"></property>
+    </bean>
     <!--    dao-->
     <bean name="userDao" class="cn.itheima.dao.impl.UserDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
     <bean name="customerDao" class="cn.itheima.dao.impl.CustomerDaoImp">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean name="baseDictDao" class="cn.itheima.dao.impl.BaseDictDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
 </beans>
