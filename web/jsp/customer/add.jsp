@@ -4,7 +4,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<TITLE>添加客户</TITLE> 
+<TITLE>
+	${empty customer?'添加':'修改'}客户
+</TITLE>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <LINK href="${pageContext.request.contextPath }/css/Style.css" type=text/css rel=stylesheet>
 <LINK href="${pageContext.request.contextPath }/css/Manage.css" type=text/css
@@ -16,9 +18,9 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/js/my.js"></script>
 	<script type="text/javascript">
 		$(function () {
-			loadSelect("006","level","cust_level.dict_id");
-			loadSelect("002","source","cust_source.dict_id");
-			loadSelect("001","industry","cust_industry.dict_id");
+			loadSelect("006","level","cust_level.dict_id"<c:if test="${not empty customer}">,${customer.cust_level.dict_id}</c:if>);
+			loadSelect("002","source","cust_source.dict_id"<c:if test="${not empty customer}">,${customer.cust_source.dict_id}</c:if>);
+			loadSelect("001","industry","cust_industry.dict_id"<c:if test="${not empty customer}">,${customer.cust_industry.dict_id}</c:if>);
 		})
 	</script>
 </HEAD>
@@ -28,10 +30,10 @@
 		2 表单提交类型为enctype,必须多段式
 		3 文件使用组件<input type="file" />
 --%>
-
 	<FORM id=form1 name=form1
 		action="${pageContext.request.contextPath }/CustomerAction_add"
 		method=post enctype="multipart/form-data">
+		<input type="hidden" name="cust_id" value="${customer.cust_id}">
 		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
 			<TBODY>
 				<TR>
@@ -52,7 +54,7 @@
 					<TD vAlign=top width="100%" bgColor=#ffffff>
 						<TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
 							<TR>
-								<TD class=manageHead>当前位置：客户管理 &gt; 添加客户</TD>
+								<TD class=manageHead>当前位置：客户管理 &gt; ${empty customer?'添加':'修改'}客户</TD>
 							</TR>
 							<TR>
 								<TD height=2></TD>
@@ -66,7 +68,7 @@
 								<td>客户名称：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="cust_name">
+														style="WIDTH: 180px" maxLength=50 name="cust_name" value="${customer.cust_name}">
 								</td>
 								<td>客户级别 ：</td>
 								<td id="level">
@@ -90,12 +92,12 @@
 								<td>固定电话 ：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="cust_phone">
+														style="WIDTH: 180px" maxLength=50 name="cust_phone" value="${customer.cust_phone}">
 								</td>
 								<td>移动电话 ：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="cust_mobile">
+														style="WIDTH: 180px" maxLength=50 name="cust_mobile" value="${customer.cust_mobile}">
 								</td>
 							</TR>
 

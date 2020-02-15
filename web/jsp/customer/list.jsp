@@ -100,6 +100,7 @@
 													<TD>客户级别</TD>
 													<TD>客户来源</TD>
 													<TD>客户行业</TD>
+													<TD>联系人</TD>
 													<TD>电话</TD>
 													<TD>手机</TD>
 													<TD>操作</TD>
@@ -111,10 +112,11 @@
 													<TD>${customer.cust_level.dict_item_name }</TD>
 													<TD>${customer.cust_source.dict_item_name }</TD>
 													<TD>${customer.cust_industry.dict_item_name }</TD>
+													<TD>${customer.cust_linkman }</TD>
 													<TD>${customer.cust_phone }</TD>
 													<TD>${customer.cust_mobile }</TD>
 													<TD>
-													<a href="${pageContext.request.contextPath }/customerServlet?method=edit&custId=${customer.cust_id}">修改</a>
+													<a href="${pageContext.request.contextPath }/CustomerAction_toEdit?cust_id=${customer.cust_id}">修改</a>
 													&nbsp;&nbsp;
 													<a href="${pageContext.request.contextPath }/customerServlet?method=delete&custId=${customer.cust_id}">删除</a>
 													</TD>

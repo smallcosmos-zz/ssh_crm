@@ -22,6 +22,47 @@ public class CustomerAction extends ActionSupport implements ModelDriven<Custome
     private String photoFileName;
     private String photoContentType;
 
+
+    public String list() throws Exception {
+        //创建离线查询对象
+        DetachedCriteria dc = DetachedCriteria.forClass(Customer.class);
+        if(StringUtils.isNotBlank(customer.getCust_name())){
+            dc.add(Restrictions.like("cust_name","%"+customer.getCust_name()+"%"));
+        }
+        //调用service方法获得分页对象
+        PageBean pb = cs.getPageBean(dc,currentPage,pageSize);
+        //将PageBean返给request域
+        ActionContext.getContext().put("pageBean",pb);
+        //转发到list页面
+        return "list";
+    }
+    public String toEdit() throws Exception {
+        //调用service根据id等查询customer对象
+        Customer c = cs.getById(customer.getCust_id());
+        //将查出来的对象放入request域
+        System.out.println(c);
+        ActionContext.getContext().put("customer",c);
+
+        //将页面转发到编辑页面
+        return "edit";
+    }
+
+    public String add() throws Exception {
+        if(photo != null){
+            System.out.printf("文件名称："+photoFileName);
+            System.out.printf("文件类型："+photoContentType);
+            photo.renameTo(new File("E:/upload/"+photoFileName));
+        }
+
+        cs.saveOrUpdate(customer);
+        return "toList";
+    }
+
+    @Override
+    public Customer getModel() {
+        return customer;
+    }
+
     public String getPhotoFileName() {
         return photoFileName;
     }
@@ -66,30 +107,4 @@ public class CustomerAction extends ActionSupport implements ModelDriven<Custome
         this.pageSize = pageSize;
     }
 
-    public String list() throws Exception {
-        //创建离线查询对象
-        DetachedCriteria dc = DetachedCriteria.forClass(Customer.class);
-        if(StringUtils.isNotBlank(customer.getCust_name())){
-            dc.add(Restrictions.like("cust_name","%"+customer.getCust_name()+"%"));
-        }
-        //调用service方法获得分页对象
-        PageBean pb = cs.getPageBean(dc,currentPage,pageSize);
-        //将PageBean返给request域
-        ActionContext.getContext().put("pageBean",pb);
-        //转发到list页面
-        return "list";
-    }
-
-    public String add() throws Exception {
-        System.out.printf("文件名称："+photoFileName);
-        System.out.printf("文件类型："+photoContentType);
-        photo.renameTo(new File("E:/upload/"+photoFileName));
-        cs.save(customer);
-        return "toList";
-    }
-
-    @Override
-    public Customer getModel() {
-        return customer;
-    }
 }

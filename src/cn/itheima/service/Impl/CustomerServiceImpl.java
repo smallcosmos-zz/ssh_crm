@@ -30,7 +30,12 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void save(Customer customer) {
-        cd.save(customer);
+    public void saveOrUpdate(Customer customer) {
+        cd.saveOrUpdate(customer);
+    }
+
+    @Override
+    public Customer getById(Long cust_id) {
+       return cd.getById(cust_id);
     }
 }
