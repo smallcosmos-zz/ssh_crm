@@ -28,4 +28,9 @@ public class CustomerServiceImpl implements CustomerService {
         //返回pagebean
         return pb;
     }
+
+    @Override
+    public void save(Customer customer) {
+        cd.save(customer);
+    }
 }

@@ -16,18 +16,22 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/js/my.js"></script>
 	<script type="text/javascript">
 		$(function () {
-			loadSelect("006","level","cust_source.dict_id",22);
-			loadSelect("002","source","cust_source.dict_id",6);
-			loadSelect("001","industry","cust_source.dict_id",3);
+			loadSelect("006","level","cust_level.dict_id");
+			loadSelect("002","source","cust_source.dict_id");
+			loadSelect("001","industry","cust_industry.dict_id");
 		})
 	</script>
 </HEAD>
 <BODY>
+<%--	上传文件的三个要求
+		1 表单提交方式post
+		2 表单提交类型为enctype,必须多段式
+		3 文件使用组件<input type="file" />
+--%>
+
 	<FORM id=form1 name=form1
 		action="${pageContext.request.contextPath }/CustomerAction_add"
-		method=post>
-		
-
+		method=post enctype="multipart/form-data">
 		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
 			<TBODY>
 				<TR>
@@ -92,6 +96,15 @@
 								<td>
 								<INPUT class=textbox id=sChannel2
 														style="WIDTH: 180px" maxLength=50 name="cust_mobile">
+								</td>
+							</TR>
+
+							<TR>
+
+
+								<td>图片 ：</td>
+								<td>
+									<input type="file" name="photo">
 								</td>
 							</TR>
 							

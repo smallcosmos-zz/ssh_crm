@@ -10,12 +10,41 @@ import org.apache.commons.lang3.StringUtils;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 
+import java.io.File;
+
 public class CustomerAction extends ActionSupport implements ModelDriven<Customer> {
 
     private Customer customer = new Customer();
     private Integer currentPage;
     private Integer pageSize;
     private CustomerService cs;
+    private File photo;
+    private String photoFileName;
+    private String photoContentType;
+
+    public String getPhotoFileName() {
+        return photoFileName;
+    }
+
+    public void setPhotoFileName(String photoFileName) {
+        this.photoFileName = photoFileName;
+    }
+
+    public String getPhotoContentType() {
+        return photoContentType;
+    }
+
+    public void setPhotoContentType(String photoContentType) {
+        this.photoContentType = photoContentType;
+    }
+
+    public File getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(File photo) {
+        this.photo = photo;
+    }
 
     public void setCs(CustomerService cs) {
         this.cs = cs;
@@ -49,6 +78,14 @@ public class CustomerAction extends ActionSupport implements ModelDriven<Custome
         ActionContext.getContext().put("pageBean",pb);
         //转发到list页面
         return "list";
+    }
+
+    public String add() throws Exception {
+        System.out.printf("文件名称："+photoFileName);
+        System.out.printf("文件类型："+photoContentType);
+        photo.renameTo(new File("E:/upload/"+photoFileName));
+        cs.save(customer);
+        return "toList";
     }
 
     @Override
