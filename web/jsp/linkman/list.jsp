@@ -68,17 +68,24 @@
 											  action="${pageContext.request.contextPath }/LinkManAction_list"
 											  method=post>
 										<TABLE cellSpacing=0 cellPadding=2 border=0>
+											<%--隐藏域--%>
+											<input type="hidden" name="currentPage" id="currentPageInput">
+											<input type="hidden" name="pageSize" id="pageSizeInput">
 											<TBODY>
 												<TR>
-													<%--隐藏域--%>
-													<input type="hidden" name="currentPage" id="currentPageInput">
-													<input type="hidden" name="pageSize" id="pageSizeInput">
 													<TD>联系人名称：</TD>
-													<TD><INPUT class=textbox id=sChannel2
-														style="WIDTH: 80px" maxLength=50 name="lkm_name" value="${param.lkm_name}"></TD>
-													
+													<TD>
+														<INPUT class=textbox id=sChannel2 style="WIDTH: 80px" maxLength=50 name="lkm_name" value="${param.lkm_name}">
+													</TD>
+													<TD>客户名称：</TD>
+													<TD>
+														<INPUT class="hidden" id="cust_id" style="WIDTH: 80px" maxLength=50 name="customer.cust_id" value="${param['customer.cust_id']}">
+														<INPUT class=textbox id="cust_name" style="WIDTH: 80px" maxLength=50 name="cust_name" value="${param.cust_name}">
+														<input type="button" value="选择客户" onclick="window.open('${pageContext.request.contextPath}/CustomerAction_list?selected=true','','width=600,height=400');">
+													</TD>
 													<TD><INPUT class=button id=sButton2 type="submit"
-														value=" 筛选 " name=sButton2></TD>
+														value=" 筛选 " name=sButton2>
+													</TD>
 												</TR>
 											</TBODY>
 										</TABLE>
@@ -109,7 +116,7 @@
 													<TD>${linkman.lkm_mobile }</TD>
 													
 													<TD>
-													<a href="${pageContext.request.contextPath }/linkmanServlet?method=edit&lkmId=${linkman.lkm_id}">修改</a>
+													<a href="${pageContext.request.contextPath }/LinkManAction_toEdit?lkm_id=${linkman.lkm_id}">修改</a>
 													&nbsp;&nbsp;
 													<a href="${pageContext.request.contextPath }/linkmanServlet?method=delete&lkmId=${linkman.lkm_id}">删除</a>
 													</TD>

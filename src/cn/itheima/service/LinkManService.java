@@ -5,6 +5,8 @@ import cn.itheima.domain.LinkMan;
 import org.hibernate.criterion.DetachedCriteria;
 
 public interface LinkManService {
-    void save(LinkMan linkMan);
-    public PageBean getPageBean(DetachedCriteria dc, Integer currentPage, Integer pageSize);
+    void saveOrUpdate(LinkMan linkMan);
+    PageBean getPageBean(DetachedCriteria dc, Integer currentPage, Integer pageSize);
+
+    LinkMan getById(Long lkm_id);
 }

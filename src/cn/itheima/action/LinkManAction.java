@@ -13,27 +13,38 @@ import org.hibernate.criterion.Restrictions;
 
 public class LinkManAction extends ActionSupport implements ModelDriven<LinkMan> {
 
-    private LinkMan linkMan  = new LinkMan();
+    private LinkMan linkMan = new LinkMan();
     private LinkManService lms;
     private Integer currentPage;
     private Integer pageSize;
 
     public String add() throws Exception {
         //调用service完成联系人添加
-        lms.save(linkMan);
+        lms.saveOrUpdate(linkMan);
         //转发到list页面
         return "toList";
     }
+
+    public String toEdit() throws Exception {
+        LinkMan lk = lms.getById(linkMan.getLkm_id());
+        System.out.println(lk.getLkm_gender());
+        ActionContext.getContext().put("linkMan",lk);
+        return "edit";
+    }
+
     public String list() throws Exception {
         //创建离线查询对象
         DetachedCriteria dc = DetachedCriteria.forClass(LinkMan.class);
-            if(StringUtils.isNotBlank(linkMan.getLkm_name())){
-            dc.add(Restrictions.like("lkm_name","%"+linkMan.getLkm_name()+"%"));
+        if (StringUtils.isNotBlank(linkMan.getLkm_name())) {
+            dc.add(Restrictions.like("lkm_name", "%" + linkMan.getLkm_name() + "%"));
+        }
+        if(linkMan.getCustomer()!=null&&linkMan.getCustomer().getCust_id()!=null){
+            dc.add(Restrictions.eq("customer.cust_id", linkMan.getCustomer().getCust_id()));
         }
         //调用service方法获得分页对象
-        PageBean pb = lms.getPageBean(dc,currentPage,pageSize);
+        PageBean pb = lms.getPageBean(dc, currentPage, pageSize);
         //将PageBean返给request域
-        ActionContext.getContext().put("pageBean",pb);
+        ActionContext.getContext().put("pageBean", pb);
         //转发到list页面
         return "list";
     }

@@ -13,8 +13,8 @@ public class LinkManServiceImpl implements LinkManService {
 
     private LinkManDao lmd;
     @Override
-    public void save(LinkMan linkMan) {
-        lmd.save(linkMan);
+    public void saveOrUpdate(LinkMan linkMan) {
+        lmd.saveOrUpdate(linkMan);
     }
 
     @Override
@@ -29,6 +29,11 @@ public class LinkManServiceImpl implements LinkManService {
         pb.setList(list);
         //返回pagebean
         return pb;
+    }
+
+    @Override
+    public LinkMan getById(Long lkm_id) {
+        return lmd.getById(lkm_id);
     }
 
     public void setLmd(LinkManDao lmd) {
