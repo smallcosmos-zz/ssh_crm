@@ -10,22 +10,28 @@
 <LINK href="${pageContext.request.contextPath }/css/Manage.css" type=text/css
 	rel=stylesheet>
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.4.4.min.js"></script>
-<SCRIPT language=javascript>
-	function to_page(page){
-		if(page){
-			$("#page").val(page);
-		}
-		document.customerForm.submit();
-		
-	}
-</SCRIPT>
+	<SCRIPT type="text/javascript">
+		function changePage(pageNum) {
+			//alert(pageNum);
+			//1 将页码的值放入对应表单隐藏域中
+			$("#currentPageInput").val(pageNum);
+			//2 提交表单
+			$("#pageForm").submit();
+		};
+
+		function changePageSize(pageSize) {
+			//alert(pageSize);
+			//1 将页码的值放入对应表单隐藏域中
+			$("#pageSizeInput").val(pageSize);
+			//2 提交表单
+			$("#pageForm").submit();
+		};
+	</SCRIPT>
 
 <META content="MSHTML 6.00.2900.3492" name=GENERATOR>
 </HEAD>
 <BODY>
-	<FORM id="customerForm" name="customerForm"
-		action="${pageContext.request.contextPath }/LinkManAction_list"
-		method=post>
+
 		
 		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
 			<TBODY>
@@ -58,18 +64,25 @@
 							<TBODY>
 								<TR>
 									<TD height=25>
+										<FORM id="pageForm" name="pageForm"
+											  action="${pageContext.request.contextPath }/LinkManAction_list"
+											  method=post>
 										<TABLE cellSpacing=0 cellPadding=2 border=0>
 											<TBODY>
 												<TR>
+													<%--隐藏域--%>
+													<input type="hidden" name="currentPage" id="currentPageInput">
+													<input type="hidden" name="pageSize" id="pageSizeInput">
 													<TD>联系人名称：</TD>
 													<TD><INPUT class=textbox id=sChannel2
 														style="WIDTH: 80px" maxLength=50 name="lkm_name" value="${param.lkm_name}"></TD>
 													
-													<TD><INPUT class=button id=sButton2 type=submit
+													<TD><INPUT class=button id=sButton2 type="submit"
 														value=" 筛选 " name=sButton2></TD>
 												</TR>
 											</TBODY>
 										</TABLE>
+										</FORM>
 									</TD>
 								</TR>
 							    
@@ -87,7 +100,7 @@
 													<TD>手机</TD>
 													<TD>操作</TD>
 												</TR>
-												<c:forEach items="${list }" var="linkman">
+												<c:forEach items="${pageBean.list }" var="linkman">
 												<TR
 													style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
 													<TD>${linkman.lkm_name }</TD>
@@ -112,23 +125,30 @@
 								<TR>
 									<TD><SPAN id=pagelink>
 											<DIV
-												style="LINE-HEIGHT: 20px; HEIGHT: 20px; TEXT-ALIGN: right">
-												共[<B>${total}</B>]条记录,[<B>${totalPage}</B>]页
+													style="LINE-HEIGHT: 20px; HEIGHT: 20px; TEXT-ALIGN: right">
+												共[<B>${pageBean.totalCount}</B>]条记录,[<B>${pageBean.totalPage}</B>]页
 												,每页显示
-												<select name="pageSize">
-												
-												<option value="1" <c:if test="${pageSize==1 }">selected</c:if>>1</option>
-												<option value="30" <c:if test="${pageSize==30 }">selected</c:if>>30</option>
+												<select name="pageSize"
+														onchange="changePageSize($('#pageSizeSelect option:selected').val())"
+														id="pageSizeSelect">
+
+												<option value="3"
+														<c:if test="${pageSize==3 }">selected</c:if>>3</option>
+												<option value="5"
+														<c:if test="${pageSize==5 }">selected</c:if>>5</option>
 												</select>
 												条
-												[<A href="javascript:to_page(${page-1})">前一页</A>]
-												<B>${page}</B>
-												[<A href="javascript:to_page(${page+1})">后一页</A>] 
+												[<A href="javascript:void(0)"
+													onclick="changePage(${pageBean.currentPage-1})">前一页</A>]
+												<B>${pageBean.currentPage}</B>
+												[<A href="javascript:void(0)"
+													onclick="changePage(${pageBean.currentPage+1})">后一页</A>]
 												到
-												<input type="text" size="3" id="page" name="page" />
+												<input type="text" size="3" id="page" name="page"
+													   value="${pageBean.currentPage}"/>
 												页
-												
-												<input type="button" value="Go" onclick="to_page()"/>
+
+												<input type="button" value="Go" onclick="changePage($('#page').val())"/>
 											</DIV>
 									</SPAN></TD>
 								</TR>

@@ -70,6 +70,9 @@
     <bean name="baseDictAction" class="cn.itheima.action.BaseDictAction" scope="prototype">
         <property name="bs" ref="baseDictService"></property>
     </bean>
+    <bean name="linkManAction" class="cn.itheima.action.LinkManAction" scope="prototype">
+        <property name="lms" ref="linkManService"></property>
+    </bean>
     <!--    service-->
     <bean name="userService" class="cn.itheima.service.Impl.UserServiceImpl">
         <property name="userDao" ref="userDao"></property>
@@ -80,6 +83,9 @@
     <bean name="baseDictService" class="cn.itheima.service.Impl.BaseDictServiceImpl">
         <property name="bsd" ref="baseDictDao"></property>
     </bean>
+    <bean name="linkManService" class="cn.itheima.service.Impl.LinkManServiceImpl">
+        <property name="lmd" ref="linkManDao"></property>
+    </bean>
     <!--    dao-->
     <bean name="userDao" class="cn.itheima.dao.impl.UserDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
@@ -88,6 +94,9 @@
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
     <bean name="baseDictDao" class="cn.itheima.dao.impl.BaseDictDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean name="linkManDao" class="cn.itheima.dao.impl.LinkManDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
 </beans>
