@@ -21,7 +21,16 @@ public class User {
     private String user_password;
     private Character user_state;
     private Set<Role> roles = new HashSet<>();
+    //关联客户拜访记录表
+    private Set<SaleVisit> saleVisits;
 
+    public Set<SaleVisit> getSaleVisits() {
+        return saleVisits;
+    }
+
+    public void setSaleVisits(Set<SaleVisit> saleVisits) {
+        this.saleVisits = saleVisits;
+    }
     public Long getUser_id() {
         return user_id;
     }

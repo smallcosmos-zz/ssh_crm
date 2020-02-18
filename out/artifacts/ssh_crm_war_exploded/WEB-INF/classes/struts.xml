@@ -21,7 +21,7 @@
         </interceptors>
         <!-- 配置默认拦截器栈      -->
         <default-interceptor-ref name="myStack"></default-interceptor-ref>
-
+        <!--全局结果集设置-->
         <global-results>
             <result name="toLogin" type="redirect">/login.jsp</result>
         </global-results>
