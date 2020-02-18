@@ -1,4 +1,4 @@
-package cn.itheima.action;
+package cn.itheima.web.action;
 
 import cn.itheima.domain.BaseDict;
 import cn.itheima.service.BaseDictService;

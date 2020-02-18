@@ -7,12 +7,31 @@
 <struts>
     <constant name="struts.objectFactory" value="spring"></constant>
     <package name="crm" namespace="/" extends="struts-default">
+        <interceptors>
+            <!-- 配置自定义拦截器       -->
+            <interceptor name="privilegeInterceptpor"
+                         class="cn.itheima.web.interceptor.PrivilegeInterceptor"></interceptor>
+            <!-- 配置拦截器栈       -->
+            <interceptor-stack name="myStack">
+                <interceptor-ref name="privilegeInterceptpor">
+                    <param name="excludeMethods">login,regist</param>
+                </interceptor-ref>
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <!-- 配置默认拦截器栈      -->
+        <default-interceptor-ref name="myStack"></default-interceptor-ref>
+
+        <global-results>
+            <result name="toLogin" type="redirect">/login.jsp</result>
+        </global-results>
         <global-exception-mappings>
             <exception-mapping exception="java.lang.RuntimeException" result="error"></exception-mapping>
         </global-exception-mappings>
         <action name="UserAction_*" class="userAction" method="{1}">
             <result name="toHome" type="redirect">/index.jsp</result>
             <result name="error">/login.jsp</result>
+            <result name="regist">/regist.jsp</result>
         </action>
         <action name="CustomerAction_*" class="customerAction" method="{1}">
             <result name="edit">/jsp/customer/add.jsp</result>

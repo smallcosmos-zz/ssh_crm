@@ -95,10 +95,10 @@
                                             <TD style="HEIGHT: 18px"></TD>
                                         </TR>
                                         <TR>
-                                            <TD></TD>
-                                            <TD><INPUT id=btn
+                                            <TD colspan="2"><INPUT id=btn
                                                        style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px"
                                                        type=image src="images/login_button.gif" name=btn>
+                                                <img src="images/regist_button.png" style="cursor: pointer" onclick="window.location.href='${pageContext.request.contextPath}/regist.jsp'">
                                             </TD>
                                         </TR>
                                         </TBODY>

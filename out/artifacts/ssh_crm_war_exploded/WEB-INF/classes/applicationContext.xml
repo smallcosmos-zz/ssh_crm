@@ -61,16 +61,16 @@
         <aop:advisor advice-ref="txAdvice" pointcut-ref="txPc"></aop:advisor>
     </aop:config>
     <!--    Action-->
-    <bean name="userAction" class="cn.itheima.action.UserAction" scope="prototype">
+    <bean name="userAction" class="cn.itheima.web.action.UserAction" scope="prototype">
         <property name="userService" ref="userService"></property>
     </bean>
-    <bean name="customerAction" class="cn.itheima.action.CustomerAction" scope="prototype">
+    <bean name="customerAction" class="cn.itheima.web.action.CustomerAction" scope="prototype">
         <property name="cs" ref="customerService"></property>
     </bean>
-    <bean name="baseDictAction" class="cn.itheima.action.BaseDictAction" scope="prototype">
+    <bean name="baseDictAction" class="cn.itheima.web.action.BaseDictAction" scope="prototype">
         <property name="bs" ref="baseDictService"></property>
     </bean>
-    <bean name="linkManAction" class="cn.itheima.action.LinkManAction" scope="prototype">
+    <bean name="linkManAction" class="cn.itheima.web.action.LinkManAction" scope="prototype">
         <property name="lms" ref="linkManService"></property>
     </bean>
     <!--    service-->

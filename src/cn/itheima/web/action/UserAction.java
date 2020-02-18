@@ -1,4 +1,4 @@
-package cn.itheima.action;
+package cn.itheima.web.action;
 
 import cn.itheima.domain.User;
 import cn.itheima.service.UserService;
@@ -19,9 +19,22 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
         //1 调用userService查询用户
         User exitUser = userService.getByUser_codeAndUser_pwd(this.user);
         //2 将返回的user对象放入session域中
-        ActionContext.getContext().getSession().put("loginUser",user);
+        ActionContext.getContext().getSession().put("loginUser",exitUser);
         //3 重定向到首页
         return "toHome";
+    }
+
+    public String regist() throws Exception {
+       //1 调用service保存用户
+        try {
+            userService.saveUser(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+            ActionContext.getContext().put("error",e.getMessage());
+            return "regist";
+        }
+        //重定向到登录页面
+        return "toLogin";
     }
 
     @Override

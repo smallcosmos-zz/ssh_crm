@@ -1,4 +1,4 @@
-package cn.itheima.action;
+package cn.itheima.web.action;
 
 import cn.itheima.VO.PageBean;
 import cn.itheima.domain.Customer;

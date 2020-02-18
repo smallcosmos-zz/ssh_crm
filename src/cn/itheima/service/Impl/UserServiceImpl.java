@@ -26,4 +26,16 @@ public class UserServiceImpl implements UserService {
         //判断密码是否正确
         return exitU;
     }
+
+    @Override
+    public void saveUser(User user) {
+        //1 根据user_code查询用户
+        User exitU = userDao.getByUser_codeAndUser_pwd(user.getUser_code());
+        if(exitU != null){
+            //用户已经存在，抛出异常
+            throw new RuntimeException("该用户已存在");
+        }
+        //2 用户不存在执行保存
+        userDao.save(user);
+    }
 }

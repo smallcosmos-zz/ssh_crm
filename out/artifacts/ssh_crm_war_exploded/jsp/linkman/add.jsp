@@ -64,8 +64,8 @@
 								</td>
 								<td>联系人性别：</td>
 								<td>
-									<input type="radio" value="1" name="lkm_gender" ${linkMan.lkm_gender.equals('1')? "checked='checked'":"''"}>男
-									<input type="radio" value="2" name="lkm_gender" ${linkMan.lkm_gender.equals('2')? "checked='checked'":"''"}>女
+									<input type="radio" value="1" name="lkm_gender" <c:if test="${linkMan.lkm_gender eq '1'}">checked</c:if>}>男
+									<input type="radio" value="2" name="lkm_gender" <c:if test="${linkMan.lkm_gender eq '2'}">checked</c:if>}>女
 								</td>
 							</TR>
 							<TR>
