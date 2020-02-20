@@ -4,6 +4,8 @@ import cn.itheima.dao.UserDao;
 import cn.itheima.domain.User;
 import cn.itheima.service.UserService;
 
+import java.util.List;
+
 public class UserServiceImpl implements UserService {
 
     private UserDao userDao;
@@ -37,5 +39,10 @@ public class UserServiceImpl implements UserService {
         }
         //2 用户不存在执行保存
         userDao.save(user);
+    }
+
+    @Override
+    public List<User> getAll() {
+        return userDao.getAll();
     }
 }

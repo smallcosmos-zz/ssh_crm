@@ -10,7 +10,21 @@
 <LINK href="${pageContext.request.contextPath }/css/Manage.css" type=text/css
 	rel=stylesheet>
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.4.4.min.js"></script>
+
 	<SCRIPT type="text/javascript">
+		function addSelect() {
+			var $select = $("<select name='user.user_id'></select>");
+			$select.append($("<option value=''>---请选择---</option>"));
+			$.post("${pageContext.request.contextPath}/UserAction_list",
+					function(data){
+						$.each( data, function(i, json){
+							var $option = $("<option value='"+json['user_id']+"'>"+json["user_name"]+"</option>")
+							$select.append($option)
+						});
+					}, "json");
+			$("#username").append($select);
+		}
+
 		function changePage(pageNum) {
 			//alert(pageNum);
 			//1 将页码的值放入对应表单隐藏域中
@@ -27,7 +41,11 @@
 			$("#pageForm").submit();
 		};
 	</SCRIPT>
-
+	<script type="text/javascript">
+		$(function () {
+			addSelect();
+		});
+	</script>
 <META content="MSHTML 6.00.2900.3492" name=GENERATOR>
 </HEAD>
 <BODY>
@@ -65,7 +83,7 @@
 								<TR>
 									<TD height=25>
 										<FORM id="pageForm" name="pageForm"
-											  action="${pageContext.request.contextPath }/LinkManAction_list"
+											  action="${pageContext.request.contextPath }/SaleVisitAction_list"
 											  method=post>
 										<TABLE cellSpacing=0 cellPadding=2 border=0>
 											<%--隐藏域--%>
@@ -79,6 +97,9 @@
 														<INPUT class="hidden" id="cust_id" style="WIDTH: 80px" maxLength=50 name="customer.cust_id" value="${param['customer.cust_id']}">
 														<INPUT class=textbox id="cust_name" style="WIDTH: 80px" maxLength=50 name="cust_name" value="${param.cust_name}">
 														<input type="button" value="选择客户" onclick="window.open('${pageContext.request.contextPath}/CustomerAction_list?selected=true','','width=600,height=400');">
+													</TD>
+													<TD>业务员名称：</TD>
+													<TD id="username">
 													</TD>
 													<TD><INPUT class=button id=sButton2 type="submit"
 														value=" 筛选 " name=sButton2>
@@ -107,14 +128,16 @@
 													<TD>下次访问时间</TD>
 													<TD>操作</TD>
 												</TR>
-												<c:forEach items="${pageBean.list }" var="linkman">
+												<c:forEach items="${pageBean.list }" var="salevisit">
 												<TR
 													style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
-													<TD>${linkman.lkm_name }</TD>
-													<TD>${linkman.lkm_gender }</TD>
-													<TD>${linkman.lkm_phone }</TD>
-													<TD>${linkman.lkm_mobile }</TD>
-													
+													<TD>${salevisit.user.user_name}</TD>
+													<TD>${salevisit.customer.cust_name}</TD>
+													<TD>${salevisit.visit_time_s}</TD>
+													<TD>${salevisit.visit_interviewee}</TD>
+													<TD>${salevisit.visit_addr}</TD>
+													<TD>${salevisit.visit_detail}</TD>
+													<TD>${salevisit.visit_nexttime_s}</TD>
 													<TD>
 													<a href="${pageContext.request.contextPath }/LinkManAction_toEdit?lkm_id=${linkman.lkm_id}">修改</a>
 													&nbsp;&nbsp;

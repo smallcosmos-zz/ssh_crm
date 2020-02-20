@@ -1,5 +1,6 @@
 package cn.itheima.domain;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SaleVisit {
@@ -25,6 +26,8 @@ public class SaleVisit {
     private String visit_interviewee;
     private Date  visit_time;
     private Date  visit_nexttime;
+    private String  visit_time_s;
+    private String  visit_nexttime_s;
 
     private Customer customer;
     private User user;
@@ -91,5 +94,26 @@ public class SaleVisit {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getVisit_time_s() {
+        return transferDate(getVisit_time(),"yyyy年MM月dd日");
+    }
+
+    public void setVisit_time_s(String visit_time_s) {
+        this.visit_time_s = visit_time_s;
+    }
+
+    public String getVisit_nexttime_s() {
+        return transferDate(getVisit_nexttime(),"yyyy年MM月dd日");
+    }
+
+    public void setVisit_nexttime_s(String visit_nexttime_s) {
+        this.visit_nexttime_s = visit_nexttime_s;
+    }
+    //时间格式转换
+    public String transferDate(Date date,String format){
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        return sdf.format(date);
     }
 }

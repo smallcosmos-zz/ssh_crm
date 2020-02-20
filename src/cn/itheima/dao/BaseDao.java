@@ -14,6 +14,8 @@ public interface BaseDao<T> {
     //删
     void delete(Serializable id);
     //改
+    //查
+    List<T> getAll();
     void update(T t);
     //查 根据id查询
     T	getById(Serializable id);
