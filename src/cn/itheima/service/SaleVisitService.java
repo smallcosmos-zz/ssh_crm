@@ -9,4 +9,6 @@ public interface SaleVisitService {
     void saveSaleVisit(SaleVisit saleVisit);
     //分页查询客户拜访记录
     public PageBean getPageBean(DetachedCriteria dc, Integer currentPage, Integer pageSize);
+
+    SaleVisit getById(String visit_id);
 }

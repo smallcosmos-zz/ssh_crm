@@ -5,7 +5,7 @@
 <html>
 <head>
     <TITLE>
-        添加拜访记录
+        ${empty saleVisit?'添加':'修改'}拜访记录
     </TITLE>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <LINK href="${pageContext.request.contextPath }/css/Style.css" type=text/css rel=stylesheet>
@@ -18,6 +18,7 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/datepicker/jquery.datepick.js"></script>
     <script type="text/javascript"
             src="${pageContext.request.contextPath}/js/datepicker/jquery.datepick-zh-CN.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath }/js/my.js"></script>
 
     <META content="MSHTML 6.00.2900.3492" name=GENERATOR>
 </HEAD>
@@ -29,11 +30,17 @@
         $('#visit_nexttime').datepick({dateFormat: 'yy-mm-dd'});
     });
 </script>
+<script type="text/javascript">
+    $(function () {
+        addSelect(${saleVisit.user.user_id});
+    });
+</script>
 <BODY>
 <FORM id=form1 name=form1
       action="${pageContext.request.contextPath }/SaleVisitAction_add"
       method="post">
-
+    <%-- 隐藏域--%>
+    <input type="hidden" name="visit_id" value="${saleVisit.visit_id}">
     <TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
         <TBODY>
         <TR>
@@ -54,7 +61,7 @@
             <TD vAlign=top width="100%" bgColor=#ffffff>
                 <TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
                     <TR>
-                        <TD class=manageHead>当前位置：拜访记录管理 &gt; 添加拜访记录</TD>
+                        <TD class=manageHead>当前位置：拜访记录管理 &gt; ${empty saleVisit?'添加':'修改'}拜访记录</TD>
                     </TR>
                     <TR>
                         <TD height=2></TD>
@@ -67,16 +74,16 @@
                     <TR>
                         <td>所属客户：</td>
                         <td>
-                            <input type="hidden" name="customer.cust_id" style="WIDTH: 180px" id="cust_id"/>
-                            <input type="text" style="WIDTH: 180px" id="cust_name"/>
+                            <input type="hidden" name="customer.cust_id" style="WIDTH: 180px" id="cust_id" value="${saleVisit.customer.cust_id}"/>
+                            <input type="text" style="WIDTH: 180px" id="cust_name" name="cust_name"
+                                   value="${saleVisit.customer.cust_name}"/>
                             <input type="button" value="选择客户"
                                    onclick="window.open('${pageContext.request.contextPath}/CustomerAction_list?selected=true','','width=600,height=300')"/>
                         </td>
-                        <td>拜访时间 ：</td>
-                        <td>
-                            <INPUT class=textbox id="visit_time" type="text"
-                                   style="WIDTH: 180px" maxLength=50 name="visit_time" readonly="readonly">
-                        </td>
+                        <td>业务员名称：</td>
+                        <TD id="username">
+                        </TD>
+
                     </TR>
 
                     <TR>
@@ -84,27 +91,38 @@
                         <td>被拜访人 ：</td>
                         <td>
                             <INPUT class=textbox id=sChannel2 type="text"
-                                   style="WIDTH: 180px" maxLength=50 name="visit_interviewee">
+                                   style="WIDTH: 180px" maxLength=50 name="visit_interviewee"
+                                   value="${saleVisit.visit_interviewee}">
                         </td>
                         <td>拜访地址：</td>
                         <td>
                             <INPUT class=textbox id=sChannel2
-                                   style="WIDTH: 180px" maxLength=50 name="visit_addr">
+                                   style="WIDTH: 180px" maxLength=50 name="visit_addr" value="${saleVisit.visit_addr}">
                         </td>
                     </TR>
 
                     <TR>
 
 
-                        <td>拜访详情 ：</td>
+                        <td>拜访时间 ：</td>
                         <td>
-                            <INPUT class=textbox id="cust_phone"
-                                   style="WIDTH: 180px" maxLength=50 name="visit_detail">
+                            <INPUT class=textbox id="visit_time" type="text"
+                                   style="WIDTH: 180px" maxLength=50 name="visit_time" readonly="readonly"
+                                   value="${saleVisit.visit_time_s}">
                         </td>
                         <td>下次拜访时间：</td>
                         <td>
                             <INPUT class=textbox id="visit_nexttime" readonly="readonly"
-                                   style="WIDTH: 180px" maxLength=50 name="visit_nexttime">
+                                   style="WIDTH: 180px" maxLength=50 name="visit_nexttime"
+                                   value="${saleVisit.visit_nexttime_s}">
+                        </td>
+                    </TR>
+                    <TR>
+                        <td>拜访详情 ：</td>
+                        <td>
+                            <INPUT class=textbox id="cust_phone"
+                                   style="WIDTH: 180px" maxLength=50 name="visit_detail"
+                                   value="${saleVisit.visit_detail}">
                         </td>
                     </TR>
                     <tr>

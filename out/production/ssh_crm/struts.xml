@@ -57,6 +57,7 @@
                <param name="actionName">SaleVisitAction_list</param>
            </result>
             <result name="list">/jsp/salevisit/list.jsp</result>
+            <result name="edit">/jsp/salevisit/add.jsp</result>
         </action>
     </package>
 </struts>

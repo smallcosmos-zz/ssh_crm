@@ -33,4 +33,9 @@ public class SaleVisitServiceImpl implements SaleVisitService {
         //返回pagebean
         return pb;
     }
+
+    @Override
+    public SaleVisit getById(String visit_id) {
+        return svd.getById(visit_id);
+    }
 }

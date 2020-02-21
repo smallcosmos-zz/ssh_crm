@@ -47,12 +47,12 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
     public String list() throws Exception {
        //调用service查询所有用户
         List<User> list = userService.getAll();
-       // 将返回结果转成json
+
+        //解决死循环
         JsonConfig jsonConfig = new JsonConfig();
         jsonConfig.setIgnoreDefaultExcludes(false);
-        //解决死循环
         jsonConfig.setExcludes(new String[]{"roles","saleVisits"});
-
+        // 将返回结果转成json
          String json = JSONArray.fromObject(list, jsonConfig).toString();
 
 

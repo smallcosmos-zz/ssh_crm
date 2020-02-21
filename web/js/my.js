@@ -21,3 +21,20 @@ function loadSelect(typecode,positionid,selecteName,selectedId){
     //将下拉选添加到指定位置
     $("#"+positionid).append($select);
 }
+
+function addSelect(selectedId) {
+    var $select = $("<select name='user.user_id'></select>");
+    $select.append($("<option value=''>---请选择---</option>"));
+    $.post("${pageContext.request.contextPath}/UserAction_list",
+        function(data){
+            $.each( data, function(i, json){
+                var $option = $("<option value='"+json['user_id']+"'>"+json["user_name"]+"</option>")
+                if(json['user_id'] == selectedId){
+                    //判断是否需要回显 ,如果需要使其被选中
+                    $option.attr("selected","selected");
+                }
+                $select.append($option)
+            });
+        }, "json");
+    $("#username").append($select);
+}

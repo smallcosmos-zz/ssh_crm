@@ -97,7 +97,7 @@ public class SaleVisit {
     }
 
     public String getVisit_time_s() {
-        return transferDate(getVisit_time(),"yyyy年MM月dd日");
+        return transferDate(getVisit_time(),"yyyy-MM-dd");
     }
 
     public void setVisit_time_s(String visit_time_s) {
@@ -105,7 +105,7 @@ public class SaleVisit {
     }
 
     public String getVisit_nexttime_s() {
-        return transferDate(getVisit_nexttime(),"yyyy年MM月dd日");
+        return transferDate(getVisit_nexttime(),"yyyy-MM-dd");
     }
 
     public void setVisit_nexttime_s(String visit_nexttime_s) {

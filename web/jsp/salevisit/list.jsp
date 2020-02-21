@@ -10,21 +10,9 @@
 <LINK href="${pageContext.request.contextPath }/css/Manage.css" type=text/css
 	rel=stylesheet>
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/my.js"></script>
 
 	<SCRIPT type="text/javascript">
-		function addSelect() {
-			var $select = $("<select name='user.user_id'></select>");
-			$select.append($("<option value=''>---请选择---</option>"));
-			$.post("${pageContext.request.contextPath}/UserAction_list",
-					function(data){
-						$.each( data, function(i, json){
-							var $option = $("<option value='"+json['user_id']+"'>"+json["user_name"]+"</option>")
-							$select.append($option)
-						});
-					}, "json");
-			$("#username").append($select);
-		}
-
 		function changePage(pageNum) {
 			//alert(pageNum);
 			//1 将页码的值放入对应表单隐藏域中
@@ -139,7 +127,7 @@
 													<TD>${salevisit.visit_detail}</TD>
 													<TD>${salevisit.visit_nexttime_s}</TD>
 													<TD>
-													<a href="${pageContext.request.contextPath }/LinkManAction_toEdit?lkm_id=${linkman.lkm_id}">修改</a>
+													<a href="${pageContext.request.contextPath }/SaleVisitAction_toEdit?visit_id=${salevisit.visit_id}">修改</a>
 													&nbsp;&nbsp;
 													<a href="${pageContext.request.contextPath }/linkmanServlet?method=delete&lkmId=${linkman.lkm_id}">删除</a>
 													</TD>
