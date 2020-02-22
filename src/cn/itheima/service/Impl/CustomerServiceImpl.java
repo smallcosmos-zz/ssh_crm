@@ -30,6 +30,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public List<Object[]> getIndustryTotal(String type){
+        return cd.getIndustryTotal(type);
+    }
+
+    @Override
     public void saveOrUpdate(Customer customer) {
         cd.saveOrUpdate(customer);
     }

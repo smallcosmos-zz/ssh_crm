@@ -11,6 +11,7 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 
 import java.io.File;
+import java.util.List;
 
 public class CustomerAction extends ActionSupport implements ModelDriven<Customer> {
 
@@ -21,6 +22,8 @@ public class CustomerAction extends ActionSupport implements ModelDriven<Custome
     private File photo;
     private String photoFileName;
     private String photoContentType;
+    //区分是查询客户行业还是客户来源
+    private String type;
 
 
     public String list() throws Exception {
@@ -56,6 +59,12 @@ public class CustomerAction extends ActionSupport implements ModelDriven<Custome
 
         cs.saveOrUpdate(customer);
         return "toList";
+    }
+
+    public String getIndustryTotal() throws Exception {
+        List<Object[]> list = cs.getIndustryTotal(type);
+        ActionContext.getContext().put("list",list);
+        return "industryTotal";
     }
 
     @Override
@@ -107,4 +116,11 @@ public class CustomerAction extends ActionSupport implements ModelDriven<Custome
         this.pageSize = pageSize;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }
